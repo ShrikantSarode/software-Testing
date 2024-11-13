@@ -1,0 +1,46 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Auto4 {
+
+	public static void main(String[] args) throws Exception {
+		
+//		https://www.jotform.com/42382403598964
+		
+		WebDriver wb = new ChromeDriver();
+		
+		wb.get("https://www.jotform.com/42382403598964");
+		
+		wb.findElement(By.id("input_3")).click();
+		Thread.sleep(2000);
+		wb.findElement(By.id("input_3")).sendKeys("Pintu");
+		Thread.sleep(2000);
+		wb.findElement(By.id("input_4")).click();
+		Thread.sleep(2000);
+		wb.findElement(By.id("input_4")).sendKeys("Door");
+		Thread.sleep(2000);
+		
+		WebElement we =null;
+		Select sr = new Select(we.findElement(By.id("input_7_month")));
+		
+		sr.selectByVisibleText("May");
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

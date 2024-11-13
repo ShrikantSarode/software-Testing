@@ -1,0 +1,19 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Auto2 {
+
+	public static void main(String[] args) throws Exception {
+		
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get("https://demo.guru99.com/test/newtours/register.php");
+		Thread.sleep(2000);
+		wd.findElement(By.name("firstName")).sendKeys("shrikant");
+		wd.findElement(By.name("lastName")).sendKeys("sarode");
+		wd.findElement(By.name("phone")).sendKeys("78454665465");
+		wd.findElement(By.id("userName")).sendKeys("example@gmail.com");
+		
+	}
+}
