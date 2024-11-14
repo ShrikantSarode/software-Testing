@@ -1,0 +1,24 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Action {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		WebDriver wd = new ChromeDriver();
+		String cW=wd.getWindowHandle();
+		wd.get("https://www.gmail.com");
+		wd.switchTo().window(cW);
+		
+		Actions act = new Actions(wd);
+		
+		act.sendKeys("Hello I am Hacker");
+		
+		
+		
+
+	}
+
+}

@@ -1,0 +1,14 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DragandDrop {
+
+	public static void main(String[] args) {
+		
+//		https://demo.guru99.com/test/drag_drop.html
+		
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get("https://demo.guru99.com/test/drag_drop.html");
+	}
+}

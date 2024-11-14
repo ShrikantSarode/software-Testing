@@ -1,0 +1,15 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Auto5 {
+
+	public static void main(String[] args) {
+//		 https://www.browserstack.com/users/sign_up
+		
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get("https://www.browserstack.com/users/sign_up");
+
+	}
+
+}

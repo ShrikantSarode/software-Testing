@@ -1,0 +1,31 @@
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Auto5Alert {
+
+	public static void main(String[] args) throws Exception {
+//		 https://www.browserstack.com/users/sign_up
+		
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get("https://www.browserstack.com/users/sign_up");
+		
+		wd.findElement(By.id("user_submit")).click();
+		
+		Thread.sleep(3000);
+		
+		Alert al = wd.switchTo().alert();
+		
+		al.accept();
+		
+		
+		
+		 
+		 
+		
+
+	}
+
+}
