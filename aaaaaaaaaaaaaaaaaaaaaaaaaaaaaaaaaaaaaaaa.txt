@@ -1,0 +1,554 @@
+public class NewTest {
+   public static WebDriver wd = new ChromeDriver() ;
+  @Test
+  public void f() {
+	  wd.findElement(By.xpath("//input[@name='firstName']")).sendKeys("Shrikant");
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  
+	  wd.get("https://www.demo.guru99.com/test/newtours/register.php");
+  }
+
+}
+
+
+public class Action {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		WebDriver wd = new ChromeDriver();
+		String cW=wd.getWindowHandle();
+		wd.get("https://www.gmail.com");
+		wd.switchTo().window(cW);
+		
+		Actions act = new Actions(wd);
+		
+		
+//		wd.findElement(By.id("identifierId"));
+		
+		WebElement we = wd.findElement(By.id("identifierId"));
+		Thread.sleep(3000);
+		we.sendKeys("Hello I am Hacker");
+		
+		act.doubleClick().build().perform();
+		act.contextClick().build().perform();
+		
+		
+
+	}
+
+}
+public class Auto2 {
+
+	public static void main(String[] args) throws Exception {
+		
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get("https://demo.guru99.com/test/newtours/register.php");
+		Thread.sleep(2000);
+		wd.manage().window().maximize();
+		wd.findElement(By.name("firstName")).sendKeys("john");
+		wd.findElement(By.name("lastName")).sendKeys("deo");
+		wd.findElement(By.name("phone")).sendKeys("78454665465");
+		wd.findElement(By.id("userName")).sendKeys("example@gmail.com");
+		wd.findElement(By.name("address1")).sendKeys("Pune");
+		wd.findElement(By.name("city")).sendKeys("Pune");
+		wd.findElement(By.name("state")).sendKeys("mhara");
+		wd.findElement(By.name("postalCode")).sendKeys("545445");
+		
+		
+		WebElement we = null;
+		Select sr = new Select(wd.findElement(By.name("country")));
+		sr.selectByVisibleText("INDIA");
+		
+		
+		wd.findElement(By.name("email")).sendKeys("sss");
+		wd.findElement(By.name("password")).sendKeys("password@123");
+		wd.findElement(By.name("confirmPassword")).sendKeys("password@123");
+		Thread.sleep(3000);
+//		wd.findElement(By.name("submit")).click();
+		
+		wd.close();
+		
+		
+		sr.selectByVisibleText("");
+		
+	}
+}
+
+public class Auto3 {
+
+	public static void main(String[] args) throws Exception {
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get("https://demo.guru99.com/test/newtours/register.php");
+		Thread.sleep(2000);
+		
+		wd.manage().window().maximize();
+		
+		Thread.sleep(2000);
+		
+		WebElement we = wd.findElement(By.name("firstName"));
+		
+		we.click();
+		
+		Thread.sleep(2000);
+		
+		we.sendKeys("john");
+		
+		Thread.sleep(3000);
+		
+		we.clear();
+		
+		Thread.sleep(2000);
+		
+		we.click();
+		
+		
+
+		
+		 String w = we.getAttribute("value");
+		 System.out.println(w);
+		
+	}
+	
+}
+
+
+public class Auto4 {
+
+	public static void main(String[] args) throws Exception {
+		
+//		https://www.jotform.com/42382403598964
+		
+		WebDriver wb = new ChromeDriver();
+		
+		wb.get("https://www.jotform.com/42382403598964");
+		
+		wb.findElement(By.id("input_3")).click();
+//		Thread.sleep(2000);
+		wb.findElement(By.id("input_3")).sendKeys("Pintu");
+//		Thread.sleep(2000);
+		wb.findElement(By.id("input_4")).click();
+//		Thread.sleep(2000);
+		wb.findElement(By.id("input_4")).sendKeys("Door@gmail.com");
+//		Thread.sleep(2000);
+		
+ 
+		
+	 
+		Select sr = new Select(wb.findElement(By.id("input_7_month")));
+		sr.selectByIndex(5);
+		
+		Select sr1 = new Select(wb.findElement(By.id("input_7_day")));
+		sr1.selectByVisibleText("2");
+		
+		Select sr2 = new Select(wb.findElement(By.id("input_7_year")));
+		sr2.selectByValue("2024");
+		
+		wb.findElement(By.id("input_5_addr_line1")).sendKeys("plot no 78");
+		wb.findElement(By.id("input_5_addr_line2")).sendKeys("Pune road");
+		wb.findElement(By.id("input_5_city")).sendKeys("Pune");
+		wb.findElement(By.id("input_5_state")).sendKeys("MH");
+		wb.findElement(By.id("input_5_postal")).sendKeys("411504");
+		
+		Select sr3 = new Select(wb.findElement(By.id("input_5_country")));
+		sr3.selectByValue("India");
+		
+		wb.findElement(By.id("input_2")).click();
+ 
+
+		
+	}
+}
+
+
+public class Auto5Alert {
+
+	public static void main(String[] args) throws Exception {
+//		 https://www.browserstack.com/users/sign_up
+//		https://demoqa.com/alerts
+		
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get("https://demoqa.com/alerts");
+//		wd.manage().window().maximize();
+		
+//		Thread.sleep(5000);
+		
+		wd.findElement(By.id("alertButton")).click();
+
+		Alert al = wd.switchTo().alert();
+				
+		String s = al.getText();
+		System.out.println(s);
+		
+		al.accept();
+		
+
+	}
+
+}
+
+
+public class Auto6Tab {
+	
+	public static void main(String[] args) throws Exception {
+		WebDriver wd = new ChromeDriver();
+		
+		String PW = wd.getWindowHandle();
+		
+		wd.get("https://www.google.co.in");
+		
+//		wd.navigate().to("https://getbootstrap.com/");
+		
+		wd.switchTo().newWindow(WindowType.TAB); // switching to new tab
+		
+		String cW= wd.getWindowHandle();
+		
+		wd.get("https://www.gmail.com");
+	 
+		wd.switchTo().window(PW);// again switching to parent/  previous window
+	
+		
+		 
+	}
+	
+	
+
+}
+
+
+public class Automate {
+
+	public static void main(String[] args) throws Exception {
+		 
+		WebDriver wd = new ChromeDriver();
+		
+		 wd.get("https://www.demoblaze.com");
+		 
+		 wd.manage().window().maximize();
+		 
+		 wd.findElement(By.id("signin2")).click();
+		 Thread.sleep(2000);
+		  
+		 wd.findElement(By.id("sign-username")).sendKeys("example@gmail.com");
+		 
+		 wd.findElement(By.id("sign-password")).sendKeys("password");
+		 
+		 wd.findElement(By.name("Sign up")).click();
+		 
+		  
+	}
+
+}
+
+public class DragandDrop {
+
+	public static void main(String[] args) {
+		
+//		https://demo.guru99.com/test/drag_drop.html
+		
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get("https://demo.guru99.com/test/drag_drop.html");
+		
+		String pw = wd.getWindowHandle();
+		
+		
+		WebElement drag= wd.findElement(By.id("fourth"));
+		
+		WebElement drop= wd.findElement(By.id("amt7"));
+		
+		Actions act = new Actions(wd);
+		
+		act.dragAndDrop(drag, drop).build().perform();
+	}
+}
+
+public class RadioAuto {
+
+	public static void main(String[] args) throws Exception {
+//		 https://demo.guru99.com/test/radio.html
+		
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get(" https://demo.guru99.com/test/radio.html");
+		
+		wd.findElement(By.id("vfb-7-1")).click();
+		Thread.sleep(2000);
+		wd.findElement(By.id("vfb-7-2")).click();
+		Thread.sleep(2000);
+		wd.findElement(By.id("vfb-7-3")).click();
+		Thread.sleep(2000);
+		wd.findElement(By.id("vfb-6-0")).click();
+		Thread.sleep(2000);
+		wd.findElement(By.id("vfb-6-1")).click();
+		Thread.sleep(2000);
+		wd.findElement(By.id("vfb-6-2")).click();
+		 
+
+	}
+
+}
+
+public class Tab2 {
+
+	public static void main(String[] args) {
+
+		WebDriver wd = new ChromeDriver();
+
+		String s1 = wd.getWindowHandle();
+
+		wd.get("https://getbootstrap.com");
+		wd.switchTo().newWindow(WindowType.TAB);
+
+		String s2 = wd.getWindowHandle();
+
+		wd.get("https://workspace.google.com/intl/en_in/gmail");
+		wd.switchTo().newWindow(WindowType.TAB);
+
+		String s3 = wd.getWindowHandle();
+
+		wd.get("https://copilot.microsoft.com/chats/j5NrRupC75EhrSsLTTDaz");
+		wd.switchTo().newWindow(WindowType.TAB);
+
+		String s4 = wd.getWindowHandle();
+
+		wd.get("https://shrikantweatherapp.netlify.app/");
+		wd.switchTo().newWindow(WindowType.TAB);
+		
+		wd.switchTo().window(s3);
+		wd.switchTo().window(s2);
+		wd.switchTo().window(s1);
+		wd.switchTo().window(s4);
+		
+		wd.switchTo().window(s3);
+		wd.close();
+		wd.switchTo().window(s2);
+		wd.close();
+		wd.switchTo().window(s1);
+		wd.close();
+		wd.switchTo().window(s4);
+		wd.close();
+	
+
+	}
+
+}
+
+
+public class Test {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver wd=new ChromeDriver();
+		wd.get("https://www.google.com");
+//		Thread.sleep(4000);
+//		wd.manage().window().maximize();
+//		wd1.get("https://www.gmail.com");
+		WebDriver wd1 = new ChromeDriver();
+		wd1.get("https://www.google.com");
+		
+		//how to print title of website in any selenium?
+//		String s=wd.getTitle();
+//		System.out.println(s);
+		
+		String url1= wd.getCurrentUrl();
+		String url2= wd1.getCurrentUrl();
+		System.out.println(url1);
+		System.out.println(url2);
+		
+		if(url1.equals(url2))
+		{
+			System.out.println("True");
+		}else {
+			System.out.println("False");
+		}
+		
+		//use to make web page change forward and backward and refresh
+		wd.navigate().back();
+		
+		wd.navigate().forward();
+		
+		wd.navigate().refresh();
+		//
+		
+		
+		
+		
+	}
+}
+
+
+public class Test1 {
+
+	public static void main(String[] args) {
+		
+		WebDriver wd = new ChromeDriver();
+		
+		wd.get("https:www.google.com");
+		
+		wd.navigate().back();
+		wd.navigate().forward();
+		wd.navigate().refresh();
+		wd.close();
+	}
+	
+	
+}
+
+package testngpack;
+
+import org.testng.SkipException;
+import org.testng.annotations.Test;
+
+public class MultipleTestCases {
+  @Test (priority = 1)
+  public void login() {
+	  System.out.println("login test case");
+  }
+  
+  @Test(priority = 2)
+  public void home() {
+	  System.out.println("home test case");
+  }
+  
+  @Test(priority = 3)
+  public void logout() {
+//	  System.out.println("logout test case");
+	  throw new SkipException("Exception");
+  }
+  
+//  @Test
+//  public void f() {
+//  }
+//  
+//  @Test
+//  public void f() {
+//  }
+//  
+//  @Test
+//  public void f() {
+//  }
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="testngpack.AllAtOnce"/>
+      <class name="testngpack.MultipleTestCases"/>
+      <class name="testngpack.NewTest"/>
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+
+
+package testngpack;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+
+public class Login {
+	
+	WebDriver wd = new ChromeDriver();
+	
+  @Test
+  public void f() {
+	  
+	  wd.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
+	  wd.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123");
+	  wd.findElement(By.id("submit")).click();
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  
+	  wd.get("https://practicetestautomation.com/practice-test-login");
+  }
+
+  @AfterTest
+  public void afterTest() throws Exception {
+	  Thread.sleep(5000);
+	  wd.close();
+  }
+
+}
+
+//input@name/id
+
+//input[@name="firstName"]
+
+//input[@name="lastName"]
+
+//input[@name="phone"]
+
+//input[@id="userName"]
+
+//a[contains(text(),'SUPPORT')]
+
+//input[@name="firstName"]//following::input[7]
+
+
+package testngpack;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+
+public class Login {
+	
+	WebDriver wd = new ChromeDriver();
+	
+  @Test
+  @Parameters({"un","pw"})
+  public void f(String un, String pw) {
+	  
+	  wd.findElement(By.xpath("//input[@name='username']")).sendKeys(un);
+	  wd.findElement(By.xpath("//input[@name='password']")).sendKeys(pw);
+	  wd.findElement(By.id("submit")).click();
+	  wd.findElement(By.xpath("//a[contains(text(),'Log out')]")).click();
+	  
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  
+	  wd.get("https://practicetestautomation.com/practice-test-login");
+  }
+
+  @AfterTest
+  public void afterTest() throws Exception {
+	  Thread.sleep(5000);
+	  wd.close();
+  }
+
+}
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="testngpack.Login"/>
+       <parameter name="un" value="student"/>
+       <parameter name="pw" value="Password123"/>
+       
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+

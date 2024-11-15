@@ -1,0 +1,244 @@
+Retesting- In retesting we will testing we will check only check only those field which have defect. 
+It is also called as confirmation testing or rechecking testing.
+
+Regression- it is also called as re-executing or side effect testing.
+tester will perform regression testing after retesting done.
+
+The main aim of regression testing is to check the existing issue must be resolve without introducing new issue.
+
+When to perform regression ?
+
+1.After re-testing 
+2. When any new module or feature added in the existing application.
+3.When any existing module deleted from the application.
+4.When environment change.
+5. In organization partial regression are performed.
+
+Black-box testing-
+
+it is a test case design technique.
+here we will pass input and check output.
+it comes in system level.
+back-box testing is also called as closed box testing or input-output testing or data driven testing.
+In this testing, tester write the input or consider the input based on requirement.
+
+ Techniques- 
+ecp - equivalent class partitioning
+bva- Boundry value analysis
+dt- Decision Table
+
+ecp - (equivalent class partitioning technique):-
+we use this technique to write the test case to the editable fields.
+it means combination of valid and In-valid ( Invalid Valid Invalid )
+
+Age: 18 to 60 : class/range
+steps-
+1. Identify class
+2. Divide the class into 2  part (valid and invalid)
+3. Consider the any one value from each partition.
+4.write down the test cases and consider the selected values.
+
+Q1.Ecp ?
+ -> it means combination of valid and In-valid ( Invalid Valid Invalid )
+
+Q2.What is valid ecp value?
+ ->( any value between 18 to 60 is valid)
+
+Q3.What is Invalid ecp value? 
+-->(any value less than 18 and more than 60)
+
+Q4. What are the same equivalence class?
+
+Age[18-60].
+
+a) 21 27 52  ( correct ans)                    b) 12 14 24
+
+c)61 66 17                                             d) 5 20 62
+
+Q5.One of the field or the box which accept the rangle between 18 to 25 identify invalid equivalent value.
+
+a)17 ( correct ) b)19 c)21 d)24
+
+Q6)In examination the student need minimum 22 mark to pass and max 40 marks
+
+a)22,23,26 
+
+b)29,30,33 ( correct )
+
+C)21,39,40
+
+d)0,15,22
+
+Q7)A page contain text box which accepts alpha numeric value identify value equivalence value.
+
+BOOK
+
+book
+
+BooK
+
+Boo01k ( correct)
+
+Q8) A program contains have numeric field as follows
+which of the following covers all the equivalent partition?
+
+values less than 10 are rejected 
+
+value between  10 and 21 are accepted
+
+value greater than or equal to 22 are reject
+    i    v   i 
+a)10 11 21
+b) 3 10 22 ( correct )
+c)10 21 22
+d)3 20 21 
+
+2) Boundary value analysis:- 
+
+In this technique we will test lower boundary and upper boundary.
+
+Q1) valid boundaries ?
+ans
+5-12
+
+Q2) Invalid boundaries ?
+ans
+upper boundary = +1
+lower boundary=  -1
+
+Q3) most boundary value?
+ans
+
+ 4 ( incorrect )
+ 5
+ 12
+ 13 ( incorrect )
+
+Q4) find out value ecp value and valid boundary?
+range-4 to 12 and ecp , most boundary value , invalid ecp value, same equivalent class , value boundaries, valid ecp values, valid ecp valid and valid bva and invalid boundary.
+
+1)ecp
+invalid- less than 4
+valid- 4 to 12
+invalid - more than 12
+
+2) most boundary
+1,2,3 invalid
+4 to 12 valid
+more than 12 invalid
+
+3) invalid ecp value
+1 2 3 and more than 12
+
+4)same equi
+
+4 to 12
+
+5)value boundaries
+
+5 to 12
+
+6) valid ecp values
+5 to 12
+
+7) valid ecp valid and valid bva 
+
+5 to 12
+
+8)invalid boundary
+
+123 and more than 12
+
+3) Decision Table-
+we will use this technique when we have multiple decisions for writing inputs.
+
+1-age >18
+2- citizen = India 
+3- marital status - yes / no
+
+White box testing:-
+
+in this we deals with code or internal mechanism of application.
+it comes under unit testing level.
+in white box testing we will check how input are process and check how output are generated.
+it is also called as open box testing or glass box testing.
+
+white box test design technique-
+1. statement coverage
+2. decision coverage
+3. conditional coverage
+
+1. statement coverage:-
+statement means lines of code.
+And coverage means how many attempt we will required to execute the code.
+
+demo code-
+read a
+read b
+if a>b
+print a
+end
+
+draw follow char based on program follow:-
+
+
+1.identify the logic of the code
+2.draw flowchart based upon program flow.
+3.compare program with diagram.
+line no code = diagram attribute.
+
+decision coverage-
+we will focus on diamond.
+
+if width is greater than length than biggest dimension is width.
+if height is greater than width than biggest dimension is height.
+end if biggest dimension is length then if height is greater than length biggest dimension is length
+
+if(w>l)
+	sop(w);
+if(h>w)
+	sop(h)
+
+
+Conditional coverage:-
+in this we will execute each and every diamond multiple time .
+it is also called as path coverage.
+ 
+
+how to create test suit in testing?
+
+combination of test cases and object 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

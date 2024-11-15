@@ -1,0 +1,13 @@
+//input@name/id
+
+//input[@name="firstName"]
+
+//input[@name="lastName"]
+
+//input[@name="phone"]
+
+//input[@id="userName"]
+
+//a[contains(text(),'SUPPORT')]
+
+//input[@name="firstName"]//following::input[7]
